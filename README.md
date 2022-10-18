@@ -1,8 +1,8 @@
 RUN THE APP:
 
-    SET DEBUG=users-manager:_ & npm start 
+    SET DEBUG=biz-ad:_ & npm start 
     |OR| 
-    SET DEBUG='users-manager:_'; npm start
+    SET DEBUG='biz-ad:_'; npm start
 
 _____________________________________________
 
