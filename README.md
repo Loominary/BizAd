@@ -9,7 +9,11 @@ _____________________________________________
  Database tables and fields:
 
     Database name: set up in config file!
-    users: user_id, full_name, email, status
+
+    users: id, name, email, password
+    services: service_id, name, status, comment
+    business_cards: id, uid, name, description, phone, address, siteURL, imgURL
+
 
  ____________________________________________
 

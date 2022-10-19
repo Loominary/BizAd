@@ -15,19 +15,22 @@ module.exports = {
 
         const { error, value } = schema.validate(reqBody);
 
-        console.log(value, reqBody);
+        console.log(value);
+
+        
 
         if (error) {
             console.log(error.details[0].message);
-            res.status(401).send('Unauthorized');
+            res.status(401).send('Unauthorized (validations)');
             return;
         }
 
-        const sql = 'SELECT * FROM users WHERE email=?;';
+        const sql = `SELECT * FROM users WHERE email=?;`;
 
         try {
             const result = await database.query(sql, [value.email]);
             const user = result[0][0];
+            /* console.log("result: ", result[0], "|| user: ", user, value.email); */
             const validPassword = await bcrypt.compare(value.password, user.password);
             if (!validPassword) throw 'Invalid password';
 
@@ -38,8 +41,7 @@ module.exports = {
             res.json({
                 token: token,
                 id: user.id,
-                first_name: user.first_name,
-                last_name: user.last_name,
+                name: user.name,
                 email: user.email
             });
             
