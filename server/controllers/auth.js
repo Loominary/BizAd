@@ -25,11 +25,13 @@ module.exports = {
             return;
         }
 
-        const sql = `SELECT * FROM users WHERE email=?;`;
+        const sql = "SELECT * FROM users WHERE email=?";
 
         try {
-            const result = await database.query(sql, [value.email]);
+            const result = await database.query(sql, value.email);
+            console.log(result[0]);
             const user = result[0][0];
+            console.log(result[0], value.email);
             /* console.log("result: ", result[0], "|| user: ", user, value.email); */
             const validPassword = await bcrypt.compare(value.password, user.password);
             if (!validPassword) throw 'Invalid password';

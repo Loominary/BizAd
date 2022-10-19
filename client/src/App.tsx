@@ -1,6 +1,7 @@
 import { Route, Routes } from 'react-router-dom';
 import './App.css';
 import About from './components/About/About';
+import PrivateRoute from './components/Auth/PrivateRoute';
 import Header from './components/Header/Header';
 import Login from './components/Login/Login';
 import Main, { displayMode, filterMode } from './components/Main/Main';
@@ -19,25 +20,33 @@ function App() {
         <Route
           path="/"
           element={
+            <PrivateRoute>
             <Main defaultDisplay={displayMode.grid} defaultFilter={filterMode.default} />
+            </PrivateRoute>
           }
         />
         <Route
           path='/about'
           element={
+            <PrivateRoute>
             <About />
+            </PrivateRoute>
           }
         />
         <Route
           path='/services'
           element={
+            <PrivateRoute>
             <Services />
+            </PrivateRoute>
           }
         />
         <Route
           path='/update/:service_id'
           element={
+            <PrivateRoute>
             <UpdateService />
+            </PrivateRoute>
           }
         />
 

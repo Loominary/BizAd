@@ -1,4 +1,5 @@
 import { Link, NavLink } from "react-router-dom";
+import LogOut from "../Auth/LogOut";
 
 
 
@@ -36,6 +37,11 @@ function Header() {
                         <li className="nav-item me-3">
                             <NavLink to="/register" className="nav-link">
                                 Sign Up
+                            </NavLink>
+                        </li>
+                        <li className="nav-item me-3">
+                            <NavLink to="/logout" className="nav-link">
+                                <LogOut/>
                             </NavLink>
                         </li>
                         <li className="nav-item">
