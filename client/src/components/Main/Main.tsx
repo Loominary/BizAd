@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import Card, { CardType } from "../Card/Card";
+import Title from "../Title/Title";
 import "./Main.css"
 
 export enum displayMode {
@@ -89,6 +90,12 @@ function Main(props: MainProps) {
 
         <>
 
+            <Title text={`Home Page`}>
+                <small className="text-muted d-block">
+                    <span>Very interesting bottom text</span>
+                </small>
+            </Title>
+
             <div className="search">
                 <div className="search-inputs">
                     <input type="text" value={searchPhrase} onChange={onChange} />
@@ -122,7 +129,7 @@ function Main(props: MainProps) {
 
 
 
-           {/*  {searchPhrase.length !== 0 && (
+            {/*  {searchPhrase.length !== 0 && (
                 <div className={display}>
                     {filter.map((value, key) => {
                         return (

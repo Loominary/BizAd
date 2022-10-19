@@ -1,5 +1,6 @@
 import { Link, NavLink } from "react-router-dom";
-import Title from "../Title/Title";
+
+
 
 function Header() {
     return (
@@ -33,7 +34,7 @@ function Header() {
                             </NavLink>
                         </li>
                         <li className="nav-item me-3">
-                            <NavLink to="/signup" className="nav-link">
+                            <NavLink to="/register" className="nav-link">
                                 Sign Up
                             </NavLink>
                         </li>
@@ -44,11 +45,7 @@ function Header() {
                 </div>
             </nav>
 
-            <Title text={`Some header text`}>
-                <small className="text-muted d-block">
-                    <span>Some text</span>
-                </small>
-            </Title>
+          
         </>
 
     );
